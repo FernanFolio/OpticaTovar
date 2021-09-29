@@ -21,4 +21,6 @@ Route::get('/formas', [ApiController::class, 'formas']);
 Route::get('/productos', [ApiController::class, 'productos']);
 Route::get('/inventario/{producto}', [ApiController::class, 'inventario']);
 
-Route::post('/contacto', [ApiController::class, 'contacto']);
+Route::middleware(['auth.basic.once'])->group(function () {
+    Route::post('/contacto', [ApiController::class, 'contacto']);
+});

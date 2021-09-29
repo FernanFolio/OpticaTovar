@@ -19,15 +19,14 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
-        // $this->call(UserSeeder::class);
-        // Marca::factory(30)->create();
-        // $this->call(CategoriaSeeder::class);
-        // $this->call(TipoArmazonSeeder::class);
-        // $this->call(FormaSeeder::class);
-        // Producto::factory(200)->create();
-        // ProductoDetalle::factory(200)->create();
-        // Inventario::factory(200)->create();
-
+        $this->call(UserSeeder::class);
+        Marca::factory(30)->create();
+        $this->call(CategoriaSeeder::class);
+        $this->call(TipoArmazonSeeder::class);
+        $this->call(FormaSeeder::class);
+        Producto::factory(200)->create();
+        ProductoDetalle::factory(200)->create();
+        Inventario::factory(200)->create();
         $this->call(OrdenSeeder::class);
     }
 }
