@@ -17,6 +17,7 @@ class CreatePivotTableOrdenProducto extends Migration
             $table->id();
             $table->foreignId('orden_id')->references('id')->on('ordenes')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('producto_id')->references('id')->on('productos')->onUpdate('cascade');
+            $table->tinyInteger('cantidad');
             $table->timestamps();
         });
     }

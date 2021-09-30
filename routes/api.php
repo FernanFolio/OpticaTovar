@@ -21,6 +21,9 @@ Route::get('/formas', [ApiController::class, 'formas']);
 Route::get('/productos', [ApiController::class, 'productos']);
 Route::get('/inventario/{producto}', [ApiController::class, 'inventario']);
 
+Route::get('/sales-per-month', [ApiController::class, 'salesPerMonth']);
+Route::get('/sales-per-place', [ApiController::class, 'salesPerPlace']);
+
 Route::middleware(['auth.basic.once'])->group(function () {
     Route::post('/contacto', [ApiController::class, 'contacto']);
 });

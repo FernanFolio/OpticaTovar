@@ -9,8 +9,6 @@ class Producto extends Model
 {
     use HasFactory;
 
-    public $timestamps = false;
-
     protected $with = ['detalle'];
 
     public function detalle()

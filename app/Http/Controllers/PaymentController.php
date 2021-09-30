@@ -23,14 +23,12 @@ class PaymentController extends Controller
     function payWithPaypal(Request $request)
     {
         $carrito = $request->carrito;
-        $ids = array_keys($carrito);
-
-        $productos = Producto::whereIn('id', $ids)->get();
+        $productos = Producto::whereIn('id', array_keys($carrito))->get();
 
         $orden = new Orden();
         $orden->user_id = Auth::user()->id;
         $orden->save();
-        $orden->productos()->attach($productos);
+        $orden->productos()->attach($carrito);
 
         try {
             $response = $this->paypalService->createOrder($orden->id, $carrito, $productos);

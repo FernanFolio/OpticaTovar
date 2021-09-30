@@ -20,15 +20,18 @@ class UserSeeder extends Seeder
             'name' => "Fernando",
             'email' => "fernando@gmail.com",
             'email_verified_at' => now(),
-            'password' => Hash::make('123'), // password
+            'photo' => 'https://f.rpp-noticias.io/2019/04/18/214521_779805.jpg',
+            'password' => Hash::make('123'),
             'remember_token' => Str::random(10),
         ]);
         User::create([
             'name' => "Admin",
             'email' => "admin@gmail.com",
             'email_verified_at' => now(),
-            'password' => Hash::make('123'), // password
+            'password' => Hash::make('123'),
             'remember_token' => Str::random(10),
+            'role' => 'admin',
+            'photo' => 'https://f.rpp-noticias.io/2019/04/18/214521_779805.jpg'
         ]);
         User::factory(3)->create();
     }

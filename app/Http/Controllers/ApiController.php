@@ -8,8 +8,10 @@ use App\Models\Categoria;
 use App\Models\Forma;
 use App\Models\Inventario;
 use App\Models\Marca;
+use App\Models\Orden;
 use App\Models\TipoArmazon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ApiController extends Controller
 {
@@ -62,5 +64,23 @@ class ApiController extends Controller
             'asunto' => $data['asunto'],
             'mensaje' => $data['mensaje'],
         ]);
+    }
+
+    function salesPerMonth()
+    {
+        $ventas = Orden::select(DB::raw('month(created_at) as mes, count(*) as ventas'))
+            ->groupBy(DB::raw('month(created_at)'))
+            ->get();
+        return $ventas;
+    }
+
+    function salesPerPlace()
+    {
+        $sales_page = Orden::where('type', 'paypal')->count();
+        $sales_store = Orden::where('type', 'store')->count();
+        return [
+            'sales_store' => $sales_page,
+            'sales_page' => $sales_store,
+        ];
     }
 }

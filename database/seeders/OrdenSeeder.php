@@ -21,12 +21,13 @@ class OrdenSeeder extends Seeder
         foreach ($ordenes as $orden) {
             $numProductos = random_int(1, 5);
 
-            $ids = [];
+            $productos = [];
             for ($i = 0; $i < $numProductos; $i++) {
-                $ids[] = random_int(1, 200);
+                $id = random_int(1, 200);
+                $productos[$id] = ['cantidad' => random_int(1, 6)];
             }
 
-            $orden->productos()->attach($ids);
+            $orden->productos()->attach($productos);
         }
     }
 }

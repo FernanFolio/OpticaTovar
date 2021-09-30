@@ -25,6 +25,8 @@ class OrdenFactory extends Factory
         return [
             'user_id' => $this->faker->numberBetween(1, 4),
             'paypal_orderid' => Str::random(8),
+            'type' => $this->faker->numberBetween(1, 2) == 1 ? 'paypal' : 'store',
+            'created_at' => $this->faker->dateTimeBetween('-8 months')
         ];
     }
 }

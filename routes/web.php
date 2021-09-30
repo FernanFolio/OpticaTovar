@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\InventarioController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\SiteController;
 use App\Models\Orden;
@@ -42,4 +44,14 @@ Route::get('/notification', function () {
     $user = User::find(1);
 
     return (new CompraNotification($orden))->toMail($user);
+});
+
+/*
+|--------------------------------------------------------------------------
+| Admin Routes
+|--------------------------------------------------------------------------
+*/
+Route::middleware(['auth'])->prefix('/admin')->group(function () {
+    Route::get('/', DashboardController::class)->name('dashboard');
+    Route::get('/inventario', InventarioController::class)->name('inventario');
 });

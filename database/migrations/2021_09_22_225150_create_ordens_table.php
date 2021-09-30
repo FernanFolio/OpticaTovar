@@ -17,6 +17,8 @@ class CreateOrdensTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->string('paypal_orderid')->nullable();
+            $table->enum('type', ['paypal', 'store'])->default('paypal');
+            // $table->decimal('total');
             $table->timestamps();
         });
     }

@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\Orden;
 use PayPalCheckoutSdk\Core\PayPalHttpClient;
 use PayPalCheckoutSdk\Core\SandboxEnvironment;
 use PayPalCheckoutSdk\Orders\OrdersCreateRequest;
@@ -102,6 +103,10 @@ class PaypalService
                 "value" => number_format($discount, 2, '.', ''),
             ],
         ];
+
+        // $orden = Orden::find($ordenId);
+        // $orden->total = $total;
+        // $orden->save();
 
         return [
             "intent" => "CAPTURE",

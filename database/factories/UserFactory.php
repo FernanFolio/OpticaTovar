@@ -27,8 +27,9 @@ class UserFactory extends Factory
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
             'email_verified_at' => now(),
-            'password' => Hash::make('123'), // password
+            'password' => Hash::make('123'), 
             'remember_token' => Str::random(10),
+            'photo' => 'https://f.rpp-noticias.io/2019/04/18/214521_779805.jpg'
         ];
     }
 

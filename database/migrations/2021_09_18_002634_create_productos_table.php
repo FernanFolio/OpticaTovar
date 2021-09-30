@@ -21,6 +21,7 @@ class CreateProductosTable extends Migration
             $table->foreignId('marca_id')->constrained();
             $table->foreignId('categoria_id')->constrained();
             $table->foreignId('forma_id')->constrained();
+            $table->timestamps();
         });
     }
 
