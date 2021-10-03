@@ -132,6 +132,11 @@
         src="/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"
         defer
     ></script>
+    {{-- SweetAlert2 --}}
+    <script
+        src="//cdn.jsdelivr.net/npm/sweetalert2@11"
+        defer
+    ></script>
     <!-- AdminLTE App -->
     <script
         src="/plugins/adminlte/adminlte.js"
@@ -140,35 +145,36 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+    <div id="app">
+        @include('layouts.partials.admin_navbar')
 
-    @include('layouts.partials.admin_navbar')
-
-    <div class="wrapper">
-        <main class="content-wrapper">
-            <header class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-12">
-                            @yield('titles')
+        <div class="wrapper">
+            <main class="content-wrapper">
+                <header class="content-header">
+                    <div class="container-fluid">
+                        <div class="row mb-2">
+                            <div class="col-12">
+                                @yield('titles')
+                            </div>
                         </div>
                     </div>
-                </div>
-            </header>
+                </header>
 
-            <section class="content container-fluid">
-                @yield('content')
-            </section>
-        </main>
-    </div>
-
-
-    <footer class="main-footer">
-        <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-        All rights reserved.
-        <div class="float-right d-none d-sm-inline-block">
-            <b>Version</b> 3.1.0-rc
+                <section class="content container-fluid">
+                    @yield('content')
+                </section>
+            </main>
         </div>
-    </footer>
+
+
+        <footer class="main-footer">
+            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+            All rights reserved.
+            <div class="float-right d-none d-sm-inline-block">
+                <b>Version</b> 3.1.0-rc
+            </div>
+        </footer>
+    </div>
 </body>
 
 </html>

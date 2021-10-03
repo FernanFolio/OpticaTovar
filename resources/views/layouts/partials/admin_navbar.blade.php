@@ -122,14 +122,14 @@
                       <ul class="nav nav-treeview">
                           <li class="nav-item">
                               <a
-                                  href="/admin/proveedor/proveedor.php"
+                                  href="{{ route('proveedores.index') }}"
                                   class="nav-link"
                               >
                                   <i class="fas fa-list nav-icon"></i>
                                   <p>Ver todos</p>
                               </a>
                               <a
-                                  href="/admin/proveedor/proveedor.php?action=form"
+                                  href="{{ route('proveedores.create') }}"
                                   class="nav-link"
                               >
                                   <i class="fas fa-plus-circle nav-icon"></i>

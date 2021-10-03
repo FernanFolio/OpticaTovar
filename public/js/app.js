@@ -2859,27 +2859,25 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 /* harmony import */ var vue_paginate__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-paginate */ "./node_modules/vue-paginate/dist/vue-paginate.js");
 /* harmony import */ var vue_paginate__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_paginate__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store */ "./resources/js/store/index.js");
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./store */ "./resources/js/store/index.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // Vue Paginate
 
 
 
+Vue.use((vue_paginate__WEBPACK_IMPORTED_MODULE_0___default()));
+Vue.component('carrito', __webpack_require__(/*! ./components/Carrito.vue */ "./resources/js/components/Carrito.vue")["default"]);
+Vue.component('btn-abrir-carrito', __webpack_require__(/*! ./components/BtnAbrirCarrito.vue */ "./resources/js/components/BtnAbrirCarrito.vue")["default"]);
+Vue.component('btn-agregar-carrito', __webpack_require__(/*! ./components/BtnAgregarAlCarrito.vue */ "./resources/js/components/BtnAgregarAlCarrito.vue")["default"]);
+Vue.component('btn-logout', __webpack_require__(/*! ./components/BtnLogout.vue */ "./resources/js/components/BtnLogout.vue")["default"]);
+Vue.component('tienda', __webpack_require__(/*! ./components/Tienda.vue */ "./resources/js/components/Tienda.vue")["default"]);
+Vue.component('form-contacto', __webpack_require__(/*! ./components/FormContacto.vue */ "./resources/js/components/FormContacto.vue")["default"]);
+Vue.component('resumen-compra', __webpack_require__(/*! ./components/ResumenCompra.vue */ "./resources/js/components/ResumenCompra.vue")["default"]);
 
-vue__WEBPACK_IMPORTED_MODULE_1__["default"].use((vue_paginate__WEBPACK_IMPORTED_MODULE_0___default()));
-vue__WEBPACK_IMPORTED_MODULE_1__["default"].component('carrito', __webpack_require__(/*! ./components/Carrito.vue */ "./resources/js/components/Carrito.vue")["default"]);
-vue__WEBPACK_IMPORTED_MODULE_1__["default"].component('btn-abrir-carrito', __webpack_require__(/*! ./components/BtnAbrirCarrito.vue */ "./resources/js/components/BtnAbrirCarrito.vue")["default"]);
-vue__WEBPACK_IMPORTED_MODULE_1__["default"].component('btn-agregar-carrito', __webpack_require__(/*! ./components/BtnAgregarAlCarrito.vue */ "./resources/js/components/BtnAgregarAlCarrito.vue")["default"]);
-vue__WEBPACK_IMPORTED_MODULE_1__["default"].component('btn-logout', __webpack_require__(/*! ./components/BtnLogout.vue */ "./resources/js/components/BtnLogout.vue")["default"]);
-vue__WEBPACK_IMPORTED_MODULE_1__["default"].component('tienda', __webpack_require__(/*! ./components/Tienda.vue */ "./resources/js/components/Tienda.vue")["default"]);
-vue__WEBPACK_IMPORTED_MODULE_1__["default"].component('form-contacto', __webpack_require__(/*! ./components/FormContacto.vue */ "./resources/js/components/FormContacto.vue")["default"]);
-vue__WEBPACK_IMPORTED_MODULE_1__["default"].component('resumen-compra', __webpack_require__(/*! ./components/ResumenCompra.vue */ "./resources/js/components/ResumenCompra.vue")["default"]);
-
-var app = new vue__WEBPACK_IMPORTED_MODULE_1__["default"]({
+var app = new Vue({
   el: '#app',
-  store: _store__WEBPACK_IMPORTED_MODULE_2__["default"]
+  store: _store__WEBPACK_IMPORTED_MODULE_1__["default"]
 });
 
 __webpack_require__(/*! ./scripts/main */ "./resources/js/scripts/main.js");

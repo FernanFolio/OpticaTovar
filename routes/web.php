@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InventarioController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\SiteController;
 use App\Models\Orden;
 use App\Models\User;
@@ -54,4 +55,13 @@ Route::get('/notification', function () {
 Route::middleware(['auth'])->prefix('/admin')->group(function () {
     Route::get('/', DashboardController::class)->name('dashboard');
     Route::get('/inventario', InventarioController::class)->name('inventario');
+
+    //Proveedores
+    Route::get('/proveedores', [ProveedorController::class, 'index'])->name('proveedores.index');
+    Route::get('/proveedores/create', [ProveedorController::class, 'create'])->name('proveedores.create');
+    Route::post('/proveedores', [ProveedorController::class, 'store'])->name('proveedores.store');
+    Route::get('/proveedores/{proveedor}', [ProveedorController::class, 'show'])->name('proveedores.show');
+    Route::get('/proveedores/{proveedor}/edit', [ProveedorController::class, 'edit'])->name('proveedores.edit');
+    Route::put('/proveedores/{proveedor}', [ProveedorController::class, 'update'])->name('proveedores.update');
+    Route::delete('/proveedores/{proveedor}', [ProveedorController::class, 'destroy'])->name('proveedores.destroy');
 });

@@ -6,6 +6,7 @@ use App\Models\Inventario;
 use App\Models\Marca;
 use App\Models\Producto;
 use App\Models\ProductoDetalle;
+use App\Models\Proveedor;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -28,5 +29,6 @@ class DatabaseSeeder extends Seeder
         ProductoDetalle::factory(200)->create();
         Inventario::factory(200)->create();
         $this->call(OrdenSeeder::class);
+        Proveedor::factory(10)->create();
     }
 }
