@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FormaController;
 use App\Http\Controllers\InventarioController;
 use App\Http\Controllers\MarcaController;
 use App\Http\Controllers\PaymentController;
@@ -84,4 +85,13 @@ Route::middleware(['auth'])->prefix('/admin')->group(function () {
     Route::get('/categorias/{categoria}/edit', [CategoriaController::class, 'edit'])->name('categorias.edit');
     Route::put('/categorias/{categoria}', [CategoriaController::class, 'update'])->name('categorias.update');
     Route::delete('/categorias/{categoria}', [CategoriaController::class, 'destroy'])->name('categorias.destroy');
+
+    //Formas
+    Route::get('/formas', [FormaController::class, 'index'])->name('formas.index');
+    Route::get('/formas/create', [FormaController::class, 'create'])->name('formas.create');
+    Route::post('/formas', [FormaController::class, 'store'])->name('formas.store');
+    Route::get('/formas/{forma}', [FormaController::class, 'show'])->name('formas.show');
+    Route::get('/formas/{forma}/edit', [FormaController::class, 'edit'])->name('formas.edit');
+    Route::put('/formas/{forma}', [FormaController::class, 'update'])->name('formas.update');
+    Route::delete('/formas/{forma}', [FormaController::class, 'destroy'])->name('formas.destroy');
 });

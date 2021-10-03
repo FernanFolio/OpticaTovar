@@ -353,14 +353,14 @@
                       <ul class="nav nav-treeview">
                           <li class="nav-item">
                               <a
-                                  href="/admin/forma/forma.php"
+                                  href="{{ route('formas.index') }}"
                                   class="nav-link"
                               >
                                   <i class="fas fa-list nav-icon"></i>
                                   <p>Ver todas</p>
                               </a>
                               <a
-                                  href="/admin/forma/forma.php?action=form"
+                                  href="{{ route('formas.create') }}"
                                   class="nav-link"
                               >
                                   <i class="fas fa-plus-circle nav-icon"></i>
