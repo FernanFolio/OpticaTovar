@@ -123,7 +123,7 @@
             :key="producto.id"
           >
             <p class="marca text-nowrap text-truncate">{{producto.marca.descripcion}}</p>
-            <img :src="producto.detalle.foto" alt="Imagen del producto" />
+            <img :src="producto.detalle.foto.foto_url" alt="Imagen del producto" />
             <div class="contenido-producto">
               <p class="description">{{producto.descripcion}}</p>
               <div class="division">

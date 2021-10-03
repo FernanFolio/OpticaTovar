@@ -14,7 +14,7 @@
             <div class="row">
                 <div class="col-md-7">
                     <img
-                        src="{{ $producto->detalle->foto }}"
+                        src="{{ $producto->detalle->foto->foto_url }}"
                         alt="Imagen del producto"
                     >
                 </div>

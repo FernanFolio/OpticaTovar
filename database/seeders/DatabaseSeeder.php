@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Image;
 use App\Models\Inventario;
 use App\Models\Marca;
 use App\Models\Producto;
@@ -20,6 +21,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
+        Image::factory(200)->create();
         $this->call(UserSeeder::class);
         Marca::factory(30)->create();
         $this->call(CategoriaSeeder::class);

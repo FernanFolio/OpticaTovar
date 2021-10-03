@@ -21,9 +21,8 @@ class CreateProductoDetallesTable extends Migration
             $table->smallInteger('longitud_varilla');
             $table->smallInteger('ancho_puente');
             $table->smallInteger('ancho_total');
+            $table->foreignId('image_id')->constrained();
             $table->string('sku', 12);
-            $table->string('foto')->nullable();
-            $table->string('foto_public_id')->nullable();
         });
     }
 

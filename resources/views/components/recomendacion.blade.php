@@ -7,7 +7,7 @@
             <div class="col-md-3 recomendacion">
                 <p class="nombre">{{ $producto->descripcion }}</p>
                 <img
-                    src="{{ $producto->detalle->foto }}"
+                    src="{{ $producto->detalle->foto->foto_url }}"
                     alt="Recomendacion"
                 >
                 <a

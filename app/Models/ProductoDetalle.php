@@ -12,4 +12,11 @@ class ProductoDetalle extends Model
     public $timestamps = false;
 
     protected $table = 'productos_detalle';
+
+    protected $with = ['foto'];
+
+    public function foto()
+    {
+        return $this->belongsTo(Image::class, 'image_id');
+    }
 }

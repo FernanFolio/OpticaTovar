@@ -9,7 +9,7 @@
         <li class="producto" v-for="producto in carrito" :key="producto.id">
           <div class="row">
             <div class="col-5 pr-0">
-              <img :src="producto.detalle.foto" />
+              <img :src="producto.detalle.foto.foto_url" />
             </div>
             <div class="col-7">
               <p class="marca">{{producto.marca.descripcion}}</p>

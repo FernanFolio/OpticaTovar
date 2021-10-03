@@ -39975,7 +39975,9 @@ var render = function() {
               return _c("li", { key: producto.id, staticClass: "producto" }, [
                 _c("div", { staticClass: "row" }, [
                   _c("div", { staticClass: "col-5 pr-0" }, [
-                    _c("img", { attrs: { src: producto.detalle.foto } })
+                    _c("img", {
+                      attrs: { src: producto.detalle.foto.foto_url }
+                    })
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "col-7" }, [
@@ -40676,7 +40678,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("img", {
                     attrs: {
-                      src: producto.detalle.foto,
+                      src: producto.detalle.foto.foto_url,
                       alt: "Imagen del producto"
                     }
                   }),
