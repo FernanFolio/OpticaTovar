@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InventarioController;
+use App\Http\Controllers\MarcaController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\SiteController;
@@ -64,4 +65,13 @@ Route::middleware(['auth'])->prefix('/admin')->group(function () {
     Route::get('/proveedores/{proveedor}/edit', [ProveedorController::class, 'edit'])->name('proveedores.edit');
     Route::put('/proveedores/{proveedor}', [ProveedorController::class, 'update'])->name('proveedores.update');
     Route::delete('/proveedores/{proveedor}', [ProveedorController::class, 'destroy'])->name('proveedores.destroy');
+
+    //Marcas
+    Route::get('/marcas', [MarcaController::class, 'index'])->name('marcas.index');
+    Route::get('/marcas/create', [MarcaController::class, 'create'])->name('marcas.create');
+    Route::post('/marcas', [MarcaController::class, 'store'])->name('marcas.store');
+    Route::get('/marcas/{marca}', [MarcaController::class, 'show'])->name('marcas.show');
+    Route::get('/marcas/{marca}/edit', [MarcaController::class, 'edit'])->name('marcas.edit');
+    Route::put('/marcas/{marca}', [MarcaController::class, 'update'])->name('marcas.update');
+    Route::delete('/marcas/{marca}', [MarcaController::class, 'destroy'])->name('marcas.destroy');
 });

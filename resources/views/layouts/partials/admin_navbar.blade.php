@@ -291,14 +291,14 @@
                       <ul class="nav nav-treeview">
                           <li class="nav-item">
                               <a
-                                  href="/admin/marca/marca.php"
+                                  href="{{ route('marcas.index') }}"
                                   class="nav-link"
                               >
                                   <i class="fas fa-list nav-icon"></i>
                                   <p>Ver todas</p>
                               </a>
                               <a
-                                  href="/admin/marca/marca.php?action=form"
+                                  href="{{ route('marcas.create') }}"
                                   class="nav-link"
                               >
                                   <i class="fas fa-plus-circle nav-icon"></i>
