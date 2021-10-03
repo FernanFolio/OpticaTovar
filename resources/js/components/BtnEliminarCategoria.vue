@@ -1,14 +1,14 @@
 <template>
-  <button href="#" class="btn bg-red btn-flat m-lg-2" @click.prevent="eliminarMarca">
+  <button href="#" class="btn bg-red btn-flat m-lg-2" @click.prevent="eliminarCategoria">
     <i class="fa fa-trash text-white"></i>
   </button>
 </template>
 
 <script>
   export default {
-    props: ['marcaId'],
+    props: ['categoriaId'],
     methods: {
-      async eliminarMarca() {
+      async eliminarCategoria() {
         Swal.fire({
           title: '¿Estas seguro?',
           text: 'Esta acción no se puede deshacer',
@@ -20,14 +20,14 @@
         }).then((result) => {
           if (result.isConfirmed) {
             axios
-              .delete(`/admin/marcas/${this.marcaId}`)
+              .delete(`/admin/categorias/${this.categoriaId}`)
               .then((resp) => {
-                const tr = document.querySelector(`#tr-${this.marcaId}`)
+                const tr = document.querySelector(`#tr-${this.categoriaId}`)
                 tr.parentNode.removeChild(tr)
                 Swal.fire('Eliminado!', resp.data, 'success')
               })
               .catch((error) => {
-                Swal.fire('Imposible!', 'No puedes eliminar una marca asociada con lentes', 'error')
+                Swal.fire('Imposible!', 'No puedes eliminar una categoria asociada con lentes', 'error')
               })
           }
         })

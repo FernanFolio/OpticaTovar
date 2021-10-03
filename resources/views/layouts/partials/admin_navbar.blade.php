@@ -322,14 +322,14 @@
                       <ul class="nav nav-treeview">
                           <li class="nav-item">
                               <a
-                                  href="/admin/categoria/categoria.php"
+                                  href="{{ route('categorias.index') }}"
                                   class="nav-link"
                               >
                                   <i class="fas fa-list nav-icon"></i>
                                   <p>Ver todas</p>
                               </a>
                               <a
-                                  href="/admin/categoria/categoria.php?action=form"
+                                  href="{{ route('categorias.create') }}"
                                   class="nav-link"
                               >
                                   <i class="fas fa-plus-circle nav-icon"></i>
