@@ -8,6 +8,7 @@ use App\Http\Controllers\MarcaController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\TipoArmazonController;
 use App\Models\Orden;
 use App\Models\User;
 use App\Notifications\CompraNotification;
@@ -94,4 +95,13 @@ Route::middleware(['auth'])->prefix('/admin')->group(function () {
     Route::get('/formas/{forma}/edit', [FormaController::class, 'edit'])->name('formas.edit');
     Route::put('/formas/{forma}', [FormaController::class, 'update'])->name('formas.update');
     Route::delete('/formas/{forma}', [FormaController::class, 'destroy'])->name('formas.destroy');
+
+    //Tipos de Armazon
+    Route::get('/tipos', [TipoArmazonController::class, 'index'])->name('tipos.index');
+    Route::get('/tipos/create', [TipoArmazonController::class, 'create'])->name('tipos.create');
+    Route::post('/tipos', [TipoArmazonController::class, 'store'])->name('tipos.store');
+    Route::get('/tipos/{tipo}', [TipoArmazonController::class, 'show'])->name('tipos.show');
+    Route::get('/tipos/{tipo}/edit', [TipoArmazonController::class, 'edit'])->name('tipos.edit');
+    Route::put('/tipos/{tipo}', [TipoArmazonController::class, 'update'])->name('tipos.update');
+    Route::delete('/tipos/{tipo}', [TipoArmazonController::class, 'destroy'])->name('tipos.destroy');
 });

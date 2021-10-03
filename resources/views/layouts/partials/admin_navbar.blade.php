@@ -384,14 +384,14 @@
                       <ul class="nav nav-treeview">
                           <li class="nav-item">
                               <a
-                                  href="/admin/tipo_armazon/tipo_armazon.php"
+                                  href="{{ route('tipos.index') }}"
                                   class="nav-link"
                               >
                                   <i class="fas fa-list nav-icon"></i>
                                   <p>Ver todos</p>
                               </a>
                               <a
-                                  href="/admin/tipo_armazon/tipo_armazon.php?action=form"
+                                  href="{{ route('tipos.create') }}"
                                   class="nav-link"
                               >
                                   <i class="fas fa-plus-circle nav-icon"></i>
