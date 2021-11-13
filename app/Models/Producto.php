@@ -9,6 +9,15 @@ class Producto extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'precio',
+        'descripcion',
+        'tipo_armazon_id',
+        'marca_id',
+        'categoria_id',
+        'forma_id',
+    ];
+
     protected $with = ['detalle'];
 
     public function detalle()

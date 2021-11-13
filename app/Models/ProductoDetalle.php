@@ -9,6 +9,16 @@ class ProductoDetalle extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'color',
+        'talla',
+        'longitud_varilla',
+        'ancho_puente',
+        'ancho_total',
+        'image_id',
+        'sku',
+    ];
+
     public $timestamps = false;
 
     protected $table = 'productos_detalle';

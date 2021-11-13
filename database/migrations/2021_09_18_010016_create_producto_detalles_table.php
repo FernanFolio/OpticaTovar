@@ -21,7 +21,7 @@ class CreateProductoDetallesTable extends Migration
             $table->smallInteger('longitud_varilla');
             $table->smallInteger('ancho_puente');
             $table->smallInteger('ancho_total');
-            $table->foreignId('image_id')->constrained();
+            $table->foreignId('image_id')->nullable()->constrained();
             $table->string('sku', 12);
         });
     }
@@ -33,6 +33,6 @@ class CreateProductoDetallesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('producto_detalles');
+        Schema::dropIfExists('productos_detalle');
     }
 }

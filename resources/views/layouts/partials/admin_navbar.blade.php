@@ -153,14 +153,14 @@
                       <ul class="nav nav-treeview">
                           <li class="nav-item">
                               <a
-                                  href="/admin/producto/producto.php"
+                                  href="{{ route('productos.index') }}"
                                   class="nav-link"
                               >
                                   <i class="fas fa-list nav-icon"></i>
                                   <p>Ver todos</p>
                               </a>
                               <a
-                                  href="/admin/producto/producto.php?action=form"
+                                  href="{{ route('productos.create') }}"
                                   class="nav-link"
                               >
                                   <i class="fas fa-plus-circle nav-icon"></i>

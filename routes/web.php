@@ -6,6 +6,7 @@ use App\Http\Controllers\FormaController;
 use App\Http\Controllers\InventarioController;
 use App\Http\Controllers\MarcaController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\TipoArmazonController;
@@ -104,4 +105,13 @@ Route::middleware(['auth'])->prefix('/admin')->group(function () {
     Route::get('/tipos/{tipo}/edit', [TipoArmazonController::class, 'edit'])->name('tipos.edit');
     Route::put('/tipos/{tipo}', [TipoArmazonController::class, 'update'])->name('tipos.update');
     Route::delete('/tipos/{tipo}', [TipoArmazonController::class, 'destroy'])->name('tipos.destroy');
+
+    //productos
+    Route::get('/productos', [ProductoController::class, 'index'])->name('productos.index');
+    Route::get('/productos/create', [ProductoController::class, 'create'])->name('productos.create');
+    Route::post('/productos', [ProductoController::class, 'store'])->name('productos.store');
+    Route::get('/productos/{producto}', [ProductoController::class, 'show'])->name('productos.show');
+    Route::get('/productos/{producto}/edit', [ProductoController::class, 'edit'])->name('productos.edit');
+    Route::put('/productos/{producto}', [ProductoController::class, 'update'])->name('productos.update');
+    Route::delete('/productos/{producto}', [ProductoController::class, 'destroy'])->name('productos.destroy');
 });
